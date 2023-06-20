@@ -1,0 +1,13 @@
+version: "3.8"
+services:
+  app1:
+    build:
+      context: app
+      dockerfile: docker/Dockerfile
+    environment:
+      USR_WITH_DEFAULT: "${USR:-world}"
+      USR: "${USR}"
+    env_file:
+      - .acme.env
+    volumes:
+      - ./app/hello-world.go:/opt/app/hello-world.go
