@@ -1,0 +1,12 @@
+version: "3.8"
+services:
+  app1:
+    build: app1
+    volumes:
+      - ./app1/log/app1:/var/log/app1
+
+  app2:
+    build: app2
+    ports:
+      - 8080:8080
+    restart: unless-stopped

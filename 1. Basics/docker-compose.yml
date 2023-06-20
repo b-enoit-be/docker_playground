@@ -1,0 +1,8 @@
+version: "3.8"
+services:
+  app1:
+    build:
+      context: app
+      dockerfile: docker/Dockerfile
+    volumes:
+      - ./app/hello-world.go:/opt/app/hello-world.go
