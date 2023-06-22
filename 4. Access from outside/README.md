@@ -11,6 +11,9 @@ TODO: finish this
 
 ```shell
 docker compose up --build
-docker exec 1basics-app1-1 ash -c "echo 'foo' > /var/log/app.log"
-docker exec 1basics-app1-1 ash -c "echo 'foo' > /var/log/app1/app.log"
+docker compose exec app1 ash -c "echo 'foo' > /var/log/app.log"
+docker compose exec app1 ash -c "echo 'foo' > /var/log/app1/app.log"
+
+docker cp CONTAINER:/var/logs /tmp/app_logs
+docker cp /tmp/app_logs CONTAINER:/var/logs
 ```
